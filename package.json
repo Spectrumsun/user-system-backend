@@ -1,0 +1,34 @@
+{
+  "name": "user_system",
+  "version": "1.0.0",
+  "description": "A simple user system",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.3.3",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production yarn build && node build/app",
+    "dev": "DEBUG=log nodemon --exec babel-node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrations": "node_modules/.bin/sequelize db:migrate:undo:all && sequelize db:migrate",
+    "build": "rm -rf build && mkdir build && babel ./server -d ./build ./server -s"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
+    "debug": "^4.2.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
