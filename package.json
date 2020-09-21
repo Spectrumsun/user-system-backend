@@ -16,11 +16,12 @@
     "sequelize-cli": "^6.2.0"
   },
   "scripts": {
-    "start": "NODE_ENV=production yarn build && node build/app",
+    "start": "NODE_ENV=production yarn build && node build/index.js",
     "dev": "DEBUG=log nodemon --exec babel-node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrations": "node_modules/.bin/sequelize db:migrate:undo:all && sequelize db:migrate",
     "build": "rm -rf build && mkdir build && babel ./server -d ./build ./server -s"
+    
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
